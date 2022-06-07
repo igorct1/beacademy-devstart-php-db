@@ -9,6 +9,7 @@ DROP TABLE tb_professor;
 
 -- Criar tabela professor  e aluno --
 CREATE TABLE tb_professor (
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     cpf CHAR(11) UNIQUE NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL
@@ -47,7 +48,7 @@ disciplina
 CREATE TABLE tb_disciplina (
     nome VARCHAR(30) UNIQUE NOT NULL,
     cargaHoraria INT NOT NULL,
-)
+);
 
 INSERT INTO tb_curso (nome, cargaHoraria, nivelTecnico)
 VALUES(
@@ -55,5 +56,8 @@ VALUES(
 );
 INSERT INTO tb_disciplina (nome, cargaHoraria)
 VALUES(
-    'Php', 73
+    'Banco de Dados', 73
 );
+
+-- Excluir dados da tabela --
+DELETE FROM tb_professor WHERE id = '2';
