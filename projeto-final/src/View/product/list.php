@@ -1,6 +1,8 @@
 <h1>Produtos cadastrados</h1>
 <div class="mb-3 text-end">
     <a class="btn btn-outline-primary" href="/produtos/novo">Novo Produto</a>
+    <a class="btn btn-dark" href="/produtos/relatorio">Gerar PDF</a>
+
 </div>
 <table class="table table-hover table-stripped">
     <thead class="table-dark">
@@ -38,4 +40,3 @@
         ?>
     </tbody> 
 </table>
-
