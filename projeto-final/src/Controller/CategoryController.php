@@ -12,9 +12,9 @@ class CategoryController extends AbstractController
         $query =  'SELECT * FROM tb_category';
         $result = $con->prepare($query);
         $result->execute();
-        $cat = $result->fetch(\PDO::FETCH_ASSOC);
-        parent::render('category/list');
-        var_dump($cat);
+        // include dirname(__DIR__).'/View/category/list.php';
+
+        parent::render('category/list', $result);
     }
     public function addAction(): void 
     {

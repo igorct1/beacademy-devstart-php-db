@@ -30,3 +30,9 @@ VALUES
 ('Informática', 'Produtos de Informática e acessórios para computador'),
 ('Escritório', 'Canetas, cadernos, folhas, etc'),
 ('Eletrônicos', 'TVs, Som portátil, Caixas de som');
+
+INSERT INTO tb_category (name, description)
+VALUES
+( 
+    'Hardware', 'Placa de vídeo, SSD, Memória Ram, etc.'
+);

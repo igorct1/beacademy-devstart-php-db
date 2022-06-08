@@ -3,6 +3,7 @@ use App\Controller\IndexController;
 use App\Controller\ProductController;
 use App\Controller\CategoryController;
 
+
 function createRoute(string $controllerName, string $methodName) {
     return [
         'controller' => $controllerName,
