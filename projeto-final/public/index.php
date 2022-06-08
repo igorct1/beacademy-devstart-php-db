@@ -1,20 +1,12 @@
 <?php
 ini_set('display_errors', 1);
 include '../vendor/autoload.php';
-
-$database = 'db_store';
-$username = 'root';
-$password = 'pass1234';
+use App\Connection\Connection;
 // conexão do banco de dados com o php, utilizando nome,  login e senha do bd
-$connection = new PDO('mysql:host=localhost;dbname='.$database, $username, $password);
+$connection = Connection::getConnection();
 $query = 'SELECT * FROM tb_category';
-
-
 $preparacao = $connection->prepare($query);
 $preparacao->execute();
-
-var_dump($preparacao->fetch());
-
 // while ($registros = $preparacao->fetch()) {
 //     var_dump($registros);
 // }
