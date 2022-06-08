@@ -45,6 +45,7 @@ class CategoryController extends AbstractController
     {
         $id = $_GET['id'];
         $con = Connection::getConnection();
+        
         if($_POST) { 
             $newName = $_POST['name'];
             $newDescription = $_POST['description'];
