@@ -29,3 +29,9 @@ UPDATE tb_professor SET nomme = 'Francisco';
 
 -- Selecionar todos os dados de todos os professores --
 SELECT * FROM tb_professor;
+
+-- Selecionar todos os dados do professor cujo id = 5 --
+SELECT * FROM tb_professor WHERE id= '5' ;
+
+-- Selecionar alguns dados de todos os professor --
+SELECT nome, cpf FROM tb_professor;
