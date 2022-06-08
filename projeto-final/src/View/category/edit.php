@@ -7,9 +7,7 @@
     <br>
     <label for="description">Descrição</label>
     <br>
-    <textarea name="description" id="description" cols="15" rows="5" class="form-control mb-3">
-    <?php echo $data['description'];?>
-    </textarea>
+    <textarea name="description" id="description" cols="15" rows="5" class="form-control mb-3"><?php echo $data['description'];?></textarea>
     <br>
     <button class="btn btn-primary mb-3">Atualizar</button>
 </form>
