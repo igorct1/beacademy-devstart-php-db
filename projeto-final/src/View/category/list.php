@@ -21,7 +21,8 @@
                     echo "<td>{$name}</td>";
                     echo "<td>{$description}</td>";
                     echo "<td>
-                    <a href='/categorias/excluir?id={$id}'>Excluir</a>
+                    <a href='/categorias/excluir?id={$id}' class='btn btn-danger btn-sm'>Excluir</a>
+                    <a href='/categorias/editar?id={$id}' class='btn btn-warning btn-sm'>Editar</a>
                     </td>";
                 echo "</tr>";
             }

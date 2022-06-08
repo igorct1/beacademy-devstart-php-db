@@ -33,7 +33,7 @@ class CategoryController extends AbstractController
         }
         parent::render('category/add');
     }
-    public function removeAction() :void 
+    public function removeAction(): void 
      {
         $con = Connection::getConnection();
         $id = $_GET['id'];
@@ -41,8 +41,23 @@ class CategoryController extends AbstractController
         $result = $con->prepare($query);
         $result->execute();
      }
-    public function editAction(): void 
+    public function updateAction(): void 
     {
-        parent::render('category/edit');
+        $id = $_GET['id'];
+        $con = Connection::getConnection();
+        if($_POST) { 
+            $newName = $_POST['name'];
+            $newDescription = $_POST['description'];
+            $updateQuery = "UPDATE tb_category SET name='{$newName}', description='{$newDescription}' WHERE id='{$id}'";
+            $result = $con->prepare($updateQuery);
+            $result->execute();
+            echo 'Pronto, categoria atualizada';
+        }
+        //
+        $query = "SELECT * FROM tb_category where id='{$id}'";
+        $result = $con->prepare($query);
+        $result->execute();
+        $data = $result->fetch(\PDO::FETCH_ASSOC);
+        parent::render('category/edit', $data);
     }
 }
