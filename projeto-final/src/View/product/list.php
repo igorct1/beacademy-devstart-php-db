@@ -1,4 +1,4 @@
-<h1>Listar produtos!</h1>
+<h1>Produtos cadastrados</h1>
 <div class="mb-3 text-end">
     <a class="btn btn-outline-primary" href="/produtos/novo">Novo Produto</a>
 </div>
@@ -28,6 +28,10 @@
                         <td>R$ {$value}</td>
                         <td>{$amount}</td>
                         <td>{$created_at}</td>
+                        <td>
+                        <a href='/produtos/excluir?id={$id}' class='btn btn-outline-danger btn-sm'>Excluir</a>
+                        <a href='/produtos/editar?id={$id}' class='btn btn-outline-warning btn-sm'>Editar</a>
+                        </td>
                     </tr> 
                 ";
             }

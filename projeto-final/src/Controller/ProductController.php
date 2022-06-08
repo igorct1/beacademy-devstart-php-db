@@ -29,7 +29,7 @@ class ProductController extends AbstractController
             $query = "INSERT INTO tb_product (name, description, value, photo, amount, category_id, created_at) VALUES( '{$name}', '{$description}', '{$value}', '{$photo}', '{$amount}', '{$category_id}', '{$createdAt}')";
             $result = $con->prepare($query);
             $result->execute();
-            echo 'Pronto, produto cadastrado';
+            parent::renderMessage('Pronto, produto cadastrado!');
         }
         $result = $con->prepare('SELECT * FROM tb_category');
         $result->execute();
@@ -37,6 +37,14 @@ class ProductController extends AbstractController
         parent::render('product/add', $result);
 
     }       
+    public function removeAction(): void 
+    {  
+        $id = $_GET['id'];
+        $con = Connection::getConnection();
+        $result = $con->prepare("DELETE FROM tb_product where id= '{$id}'");
+        $result->execute();
+        parent::renderMessage('Pronto, produto excluido!');
+    }
     public function editAction(): void 
     {
         parent::render('product/edit');
