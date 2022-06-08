@@ -19,6 +19,5 @@
     <label for="name">Foto</label>
     <input value = "<?php echo $product['photo'];?>" name="photo" id="photo" class="form-control mb-3 "type="text">
 
-
     <button class="btn btn-primary mb-3">Atualizar</button>
 </form>

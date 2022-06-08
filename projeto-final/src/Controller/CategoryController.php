@@ -29,7 +29,7 @@ class CategoryController extends AbstractController
             $con = Connection::getConnection();
             $result = $con->prepare($query);
             $result->execute();
-            echo 'Pronto, categoria inserida';
+            parent::renderMessage('Pronto, sua categoria foi inserida com sucesso!');
         }
         parent::render('category/add');
     }
@@ -40,6 +40,10 @@ class CategoryController extends AbstractController
         $query = "DELETE FROM tb_category where id='{$id}'";
         $result = $con->prepare($query);
         $result->execute();
+        include dirname(__DIR__).'/View/_partials/head.php';
+        parent::renderMessage('A categoria foi excluida com sucesso!');
+        include dirname(__DIR__).'/View/_partials/footer.php';
+
      }
     public function updateAction(): void 
     {
@@ -52,7 +56,7 @@ class CategoryController extends AbstractController
             $updateQuery = "UPDATE tb_category SET name='{$newName}', description='{$newDescription}' WHERE id='{$id}'";
             $result = $con->prepare($updateQuery);
             $result->execute();
-            echo 'Pronto, categoria atualizada';
+            parent::renderMessage('A categoria foi atualizada com sucesso!');
         }
         //
         $query = "SELECT * FROM tb_category where id='{$id}'";

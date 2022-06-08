@@ -1,4 +1,5 @@
 <h1>Listar categorias</h1>
+<a href="/categorias/nova" class="btn btn-outline-primary mb-3">Nova categoria</a>
 <table class="table table-hover table-striped">
     <thead class="table-dark">
         <tr>
@@ -20,8 +21,8 @@
                     echo "<td>{$name}</td>";
                     echo "<td>{$description}</td>";
                     echo "<td>
-                    <a href='/categorias/excluir?id={$id}' class='btn btn-danger btn-sm'>Excluir</a>
-                    <a href='/categorias/editar?id={$id}' class='btn btn-warning btn-sm'>Editar</a>
+                    <a href='/categorias/excluir?id={$id}' class='btn btn-outline-danger btn-sm'>Excluir</a>
+                    <a href='/categorias/editar?id={$id}' class='btn btn-outline-warning btn-sm'>Editar</a>
                     </td>";
                 echo "</tr>";
             }
