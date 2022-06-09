@@ -44,9 +44,8 @@ class ProductController extends AbstractController
         $con = Connection::getConnection();
         $result = $con->prepare("DELETE FROM tb_product where id= '{$id}'");
         $result->execute();
-        include dirname(__DIR__).'/View/_partials/head.php';
         parent::renderMessage('Seu produto foi excluido com sucesso!');
-        include dirname(__DIR__).'/View/_partials/footer.php';
+
     }
     public function editAction(): void 
     {   
