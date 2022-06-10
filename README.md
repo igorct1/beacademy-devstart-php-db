@@ -1,7 +1,7 @@
 
 #  PHP e Banco de Dados MariaDB
 
-
+## CRUD manipulando categorias/produtos utilizando arquitetura MVC e banco de dados mariadb;
 
 
 
