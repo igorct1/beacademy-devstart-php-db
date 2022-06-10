@@ -9,13 +9,13 @@ abstract class AbstractController
     public function render(string $viewName, $data = null): void 
      {
         include_once dirname(__DIR__)."/View/_partials/head.php";
-        include dirname(__DIR__)."/View/{$viewName}.php";
+        include_once dirname(__DIR__)."/View/{$viewName}.php";
         include_once dirname(__DIR__)."/View/_partials/footer.php";
      }
      public function renderMessage(string $message): void 
      {
-       include dirname(__DIR__)."/View/_partials/head.php";
+       include_once dirname(__DIR__)."/View/_partials/head.php";
        include_once dirname(__DIR__)."/View/_partials/message.php";
-       include dirname(__DIR__)."/View/_partials/footer.php";
+       include_once dirname(__DIR__)."/View/_partials/footer.php";
    }
 }
